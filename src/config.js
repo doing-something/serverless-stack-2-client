@@ -1,17 +1,40 @@
+const dev = {
+    s3: {
+        REGION: 'ap-northeast-2',
+        BUCKET: 'notes-app-2-api-dev-attachmentsbucket-ccotmh9dim1d'
+    },
+    apiGateway: {
+        REGION: 'ap-northeast-2',
+        URL: 'https://850dr4030j.execute-api.ap-northeast-2.amazonaws.com/dev'
+    },
+    cognito: {
+        REGION: 'ap-northeast-2',
+        USER_POOL_ID: 'ap-northeast-2_eULRByH49',
+        APP_CLIENT_ID: '7aq93l05i2jin76qh2jg7pkhc4',
+        IDENTITY_POOL_ID: 'ap-northeast-2:686ffcba-40e5-4e26-be37-6b70c505f554'
+    }
+};
+
+const prod = {
+    s3: {
+        REGION: 'ap-northeast-2',
+        BUCKET: 'notes-app-2-api-prod-attachmentsbucket-1wcf7vhuom7m5'
+    },
+    apiGateway: {
+        REGION: 'ap-northeast-2',
+        URL: 'https://k7frbd0eni.execute-api.ap-northeast-2.amazonaws.com/prod'
+    },
+    cognito: {
+        REGION: 'ap-northeast-2',
+        USER_POOL_ID: 'ap-northeast-2_L4nENC3gR',
+        APP_CLIENT_ID: 'qcn99eravqpr4suc8io2i1vb7',
+        IDENTITY_POOL_ID: 'ap-northeast-2:d244931f-b6d3-4fcb-b273-86e96d1e6391'
+    }
+};
+
+const config = process.env.REACT_APP_STAGE === 'prod' ? prod : dev;
+
 export default {
-  MAX_ATTACHMENT_SIZE: 5000000,
-  s3: {
-    REGION: "us-east-1",
-    BUCKET: "notes-app-uploads"
-  },
-  apiGateway: {
-    REGION: "us-east-1",
-    URL: "https://5by75p4gn3.execute-api.us-east-1.amazonaws.com/prod"
-  },
-  cognito: {
-    REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_udmFFSb92",
-    APP_CLIENT_ID: "4hmari2sqvskrup67crkqa4rmo",
-    IDENTITY_POOL_ID: "us-east-1:ceef8ccc-0a19-4616-9067-854dc69c2d82"
-  }
+    MAX_ATTACHMENT_SIZE: 5000000,
+    ...config
 };
