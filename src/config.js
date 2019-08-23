@@ -12,7 +12,8 @@ const dev = {
         USER_POOL_ID: 'ap-northeast-2_eULRByH49',
         APP_CLIENT_ID: '7aq93l05i2jin76qh2jg7pkhc4',
         IDENTITY_POOL_ID: 'ap-northeast-2:686ffcba-40e5-4e26-be37-6b70c505f554'
-    }
+    },
+    COPYSTRIPE_KEY: 'pk_test_1Tqi4Vo5wWS0jOJxzHsMkVZ100aM1u9HU0'
 };
 
 const prod = {
@@ -29,7 +30,8 @@ const prod = {
         USER_POOL_ID: 'ap-northeast-2_L4nENC3gR',
         APP_CLIENT_ID: 'qcn99eravqpr4suc8io2i1vb7',
         IDENTITY_POOL_ID: 'ap-northeast-2:d244931f-b6d3-4fcb-b273-86e96d1e6391'
-    }
+    },
+    COPYSTRIPE_KEY: 'pk_test_1Tqi4Vo5wWS0jOJxzHsMkVZ100aM1u9HU0'
 };
 
 const config = process.env.REACT_APP_STAGE === 'prod' ? prod : dev;
